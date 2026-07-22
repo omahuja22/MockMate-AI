@@ -7,9 +7,16 @@ type ReportScoreBarProps = {
   value: number
   barClassName: string
   variants: Variants
+  shouldReduceMotion: boolean
 }
 
-export function ReportScoreBar({ label, value, barClassName, variants }: ReportScoreBarProps) {
+export function ReportScoreBar({
+  label,
+  value,
+  barClassName,
+  variants,
+  shouldReduceMotion,
+}: ReportScoreBarProps) {
   return (
     <motion.div variants={variants}>
       <div className="mb-2 flex items-center justify-between gap-4 text-sm">
@@ -26,10 +33,10 @@ export function ReportScoreBar({ label, value, barClassName, variants }: ReportS
       >
         <motion.div
           className={cn('h-full origin-left rounded-full bg-foreground', barClassName)}
-          initial={{ scaleX: 0 }}
+          initial={{ scaleX: shouldReduceMotion ? 1 : 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.7, ease: 'easeOut' }}
         />
       </div>
     </motion.div>

@@ -47,7 +47,12 @@ export function HowItWorksSection() {
           />
           <div className="grid gap-5 lg:grid-cols-3">
             {howItWorksSteps.map((step) => (
-              <HowItWorksStepCard key={step.step} step={step} variants={itemVariants} />
+              <HowItWorksStepCard
+                key={step.step}
+                step={step}
+                variants={itemVariants}
+                shouldReduceMotion={shouldReduceMotion}
+              />
             ))}
           </div>
         </div>

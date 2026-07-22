@@ -23,3 +23,5 @@ export const improvementSuggestions = [
   'Reduce filler words during longer explanations',
   'Add more specific outcomes when describing projects',
 ] as const
+
+export const progressGraphBars = ['h-10', 'h-16', 'h-14', 'h-20', 'h-24', 'h-28'] as const

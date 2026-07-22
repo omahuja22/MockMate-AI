@@ -5,15 +5,20 @@ import { type HowItWorksStep } from '@/components/features/how-it-works/howItWor
 type HowItWorksStepCardProps = {
   step: HowItWorksStep
   variants: Variants
+  shouldReduceMotion: boolean
 }
 
-export function HowItWorksStepCard({ step, variants }: HowItWorksStepCardProps) {
+export function HowItWorksStepCard({
+  step,
+  variants,
+  shouldReduceMotion,
+}: HowItWorksStepCardProps) {
   const Icon = step.icon
 
   return (
     <motion.article
       variants={variants}
-      whileHover={{ y: -2 }}
+      whileHover={{ y: shouldReduceMotion ? 0 : -2 }}
       transition={{ duration: 0.18, ease: 'easeOut' }}
       className="relative z-10 flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-sm)] transition-colors duration-200 hover:border-foreground/15 hover:bg-background"
     >
