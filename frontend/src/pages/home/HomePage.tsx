@@ -1,11 +1,15 @@
-import { Section } from '@/components/layout/Section'
+import { FeaturesSection } from '@/components/features/features'
+import { HeroSection } from '@/components/features/hero'
+import { ProblemSection } from '@/components/features/problem'
+import { TrustedBySection } from '@/components/features/trusted-by'
 
 export function HomePage() {
   return (
-    <Section
-      kicker="Home"
-      title="MockMate AI frontend foundation"
-      description="Minimal application shell in place. Product screens can now grow on top of a consistent layout, theme, and routing system."
-    />
+    <>
+      <HeroSection />
+      <TrustedBySection />
+      <ProblemSection />
+      <FeaturesSection />
+    </>
   )
 }
